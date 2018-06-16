@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Website to create Ethereum tokens.">
+
+    <title>EtherMill - Ethereum token creation</title>
+
+    <!-- CSS ============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'tokenfactory/css/main.css' %}">
+    <!--===============================================================================================-->
+
+  </head>
+  <div class="text-center">
+      {% block metamask %}{% endblock %}
+  </div>
+  <body>
+  <header class="masthead container">
+    <div class="inner">
+      <a href="/"><h3 class="masthead-brand">EtherMill</h3></a>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/create">Create Token</a>
+        <a class="nav-link" href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="mastfoot mt-auto text-center">
+    <div class="inner">
+      <p>From the creators of <a href="https://blockreef.com/">BlockReef.com</a></p>
+    </div>
+  </footer>
+
+  {% block modal %}{% endblock %}
+
+  <!-- JavaScript ================================================== -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <!--<script src="{% static 'tokenfactory/bower_components/bootstrap/assets/js/vendor/popper.min.js' %}"></script>-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="{% static 'tokenfactory/js/bignumber.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <!--===============================================================================================-->
+
+  {% block createContractScript %}{% endblock %}
+  {% block txhashscript %}{% endblock %}
+
+  </body>
+</html>

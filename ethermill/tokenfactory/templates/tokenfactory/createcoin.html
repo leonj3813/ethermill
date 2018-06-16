@@ -1,0 +1,57 @@
+{% extends "tokenfactory/base.html" %}
+{% load static %}
+{% block metamask %}
+<div class="alert alert-danger metamask-alert" role="alert">Looking for MetaMask...</div>
+<div class="alert alert-success metamask-account" role="alert"></div>
+{% endblock %}
+{% block content %}
+<div class="container small-width d-flex h-100 p-3 mx-auto flex-column text-center">
+  <main role="main" class="inner cover">
+    <h2>Create your own token with Ethereum</h2>
+    <h5>Please read the <a href="/about">About Page</a> for any questions on field options</h5>
+    <form class="form-create" id="createForm">
+       <p style="display: none" id="validationError"></p>
+       <label for="inputTokenName" class="sr-only">Token Name</label>
+       <input disabled type="string" name="tokenname" id="inputTokenName" class="form-control" placeholder="Token Name" required autofocus>
+
+       <label for="inputTokenSymbol" class="sr-only">Token Symbol</label>
+       <input disabled type="string" name="tokensymbol" id="inputTokenSymbol" class="form-control" placeholder="Token Symbol" required>
+
+       <label for="inputAmount" class="sr-only">Number of Tokens to Create</label>
+       <input disabled type="text" name="inputamount" id="inputAmount" class="form-control" placeholder="Number of Tokens to Create" required>
+
+       <p style="display: none" id="decimalWarning">Warning: Using decimal units more than 18 is not recommended for compatibility purposes.</p>
+       <label for="inputDecimals" class="sr-only">Number of Decimal Places to split tokens into</label>
+       <input disabled type="number" name="inputdecimals" id="inputDecimals" class="form-control" placeholder="Number of decimal places to split tokens into" required>
+
+       <div id="createCoinDiv">
+           <p>You will get a final confirmation before your token is created</p>
+           <button disabled id="createCoinButton" class="btn btn-lg btn-primary btn-block" type="submit">Create Token</button>
+       </div>
+    </form>
+  </main>
+</div>
+{% endblock %}
+
+{% block modal %}
+<!-- Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Final Confirmation</h5>
+    </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="confirmationCancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" id="confirmationCreate" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block createContractScript %}
+<script src="{% static 'tokenfactory/js/helpers.js' %}"></script>
+<script src="{% static 'tokenfactory/js/createContract.js' %}"></script>
+{% endblock %}

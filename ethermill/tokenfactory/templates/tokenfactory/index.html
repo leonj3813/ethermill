@@ -1,0 +1,21 @@
+{% extends "tokenfactory/base.html" %}
+{% block content %}
+<div class="container small-width d-flex h-100 p-3 mx-auto flex-column text-center">
+  <main role="main" class="inner cover">
+    <h2 class="cover-heading">Create your own cryptocurrency with Ethereum</h2>
+    <p>
+        Make your own cryptocurrency token built on top of the Ethereum blockchain.
+        This website is free to use and the only thing you pay is the Ethereum gas to complete the contract.
+        You can also create tokens on Ethereum test networks completely free.
+    </p>
+    <p>
+        Go to our About page to learn more about Ethereum tokens or the Create page to make your own coin.
+    </p>
+    <p class="lead redirect-buttons">
+      <a href="/about" class="btn btn-lg btn-secondary redirect-button">About</a>
+      or
+      <a href="/create" class="btn btn-lg btn-secondary redirect-button">Create</a>
+    </p>
+  </main>
+</div>
+{% endblock %}

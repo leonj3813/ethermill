@@ -1,0 +1,132 @@
+{% extends "tokenfactory/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container d-flex h-100 p-3 mx-auto flex-column">
+  <main role="main" class="inner cover">
+    <h2 class="cover-heading">Ethereum Tokens</h2>
+    <p>
+        Ethereum tokens are digital assets that can represent any tradable good. These tokens are built using contracts on the Ethereum blockchain.
+    </p>
+    <p>
+        Most of the tokens on the Ethereum blockchain follow a standard called ERC20. This standard defines the functions and events that the token
+        has to implement. Most tokens follow this standard because Ethereum interfaces expect a common standard and if a token does not follow
+        these rules then they may not be able to interact correctly with all wallets and contracts. The ECR20 standard can be viewed <a href="https://theethereum.wiki/w/index.php/ERC20_Token_Standard">here</a>.
+    </p>
+    <p>
+        Ethereum tokens are usually sold to the public through an initial coin offering (ICO) similar to the way in which a company will sell shares to raise money.
+        The owner of the coin will sell the coin in order to fund their project and in return these coins will be worth more money than the original purchase price.
+        If the final project gains enough traction these tokens could be worth many times their purchase price.
+    </p>
+    <p>
+        Ethereum is an example of a very successful ICO. The
+        Ethereum ICO raised over 18 million dollars in Bitcoin. At the time you could buy 2000 Ethereum tokens for about 600 dollars in Bitcoins, or about 30 cents each.
+        As this is written one Ethereum token sells for about 1000 dollars, not a bad return.
+    </p>
+
+    <h2 class="cover-heading">Creating your own token</h2>
+    <p>
+        To make a new coin from scratch an Ethereum contract has to be programmed and deployed to the Blockchain. You can do this automatically using
+        our create coin page. Our coin conforms to the ERC20 standard that most wallets, exchanges and other contracts expect.
+    </p>
+    <p>
+        A new token needs a name, a symbol, an initial amount, and the number of decimal places to divide one token into.
+    </p>
+    <p>
+        The name is obvious, it is just a readable name that can be used to identify your token. The name does not have to be unique between tokens. You can make a token with the same name as many
+        other tokens.
+    </p>
+    <p>
+        The symbol is just a few letters that will be used to display your token in wallet interfaces. This symbol will be what most people will see in their wallet when they receive your token.
+    </p>
+    <p>
+        The initial amount is the number of tokens to create. You can create 10 coins and make them very rare or create billions of coins and give them out to everyone. With a standard token you can never
+        create more tokens than the initial amount.
+    </p>
+    <p>
+        Finally the number of decimal places is how many individual units you can split one token into. Just like you can split a dollar into 100 pennies, you can split your token into smaller units.
+        The standard is to split a token into 18 decimal places and this is the best value to use without a good reason otherwise.
+    </p>
+
+    <h2 class="cover-heading">Importing your token into MetaMask</h2>
+    <p>
+        Congratuations! Now you have your own ERC20 Ethereum token. If this token is on the main Ethereum blockchain you can view it at <a href="https://etherscan.io/">https://etherscan.io/<a>.
+        If your token is on the Ropsten network you can view it at <a href="https://ropsten.etherscan.io/">https://ropsten.etherscan.io/</a>. If your token is on the Kovan network you can
+        view it at <a href="https://kovan.etherscan.io/">https://kovan.etherscan.io/</a>. Finally if your token is on the Rinkeby network you can view it at <a href="https://rinkeby.etherscan.io/">https://rinkeby.etherscan.io/</a>.
+    </p>
+    <p>
+        The next thing you will want to do is add your token to your MetaMask tab. This way you can view how many tokens you have in your MetaMask token tab.
+    </p>
+    <p>
+        Open MetaMask and go to the tokens tab.
+    </p>
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/token_tab.png' %}" alt="Token tab">
+    </p>
+    <p>
+        Paste your token contract into the "Token Contract Address" field. The Token Symbol and Decimals of Precison fields will be automatically populated.
+    </p>
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/add_token.png' %}" alt="Add token field">
+    </p>
+    <p>
+        Click add and now you will be able to view your newly created token in the MetaMask tokens tab. Clicking on your token will take you to the etherscan page for your token.
+    </p>
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/new_token.png' %}" alt="New token added to tab">
+    </p>
+    <h2 class="cover-heading">Sending your token</h2>
+    <p>
+        Before getting started, you need to have real Ether on the network that your token is located in order to send it to other people. This Ether pays the people who
+        complete these transactions. Read more about cryptocurrency mining and Ethereum gas if you want to know more.
+    <p>
+    <p>
+        MetaMask no longer supports sending token directly through their interface so you will need to use MetaMask in conjunction with a sending website. The best website
+        for doing this is <a href="https://www.myetherwallet.com/">https://www.myetherwallet.com/</a>. MyEtherWallet does not need your private key or password, it uses
+        MetaMask for the authentication to send tokens from your account.
+    </p>
+    <p>
+        Go to MyEtherWallet and verify that you have the correct website. Verify in your web address bar that you are at https://www.myetherwallet.com/. Make sure that
+        the first part of this address says "https" and not "http" or anything else. There are scam websites out there that recreate popular cryptocurrency websites to
+        try and get you to confirm a transaction on them. When you do they will route that transaction to their account and steal your Ether.
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/myetherwallet_bar.png' %}" alt="MyEtherWallet address bar">
+    <p>
+        Once you are sure that you are on the correct website, navigate to the Send Ether & Tokens tab at the top of the screen. Now you can select that you would
+        like to access your wallet using MetaMask.
+    </p>
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/send_tokens.png' %}" alt="New token added to tab">
+    </p>
+    <p>
+        Now you need to add your custom token to MyEtherWallet in much the same way that you have to add it to MetaMask. Scroll down the page until you see Token Balances on the right side.
+        Click "Add Custom Token". This will display an input box much the same as the Metamask one. Input your Token Contract Address. You may get a checksum warning, but ignore this.
+        Now put in the token symbol and the token decimals that you specified when you created the token.
+    </p>
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/token_balances_input.png' %}" alt="Token balances display filled out">
+    <p>
+    <p>
+        Now click the save button and watch your token show up under Token Balances. You are ready to send your new custom tokens now. Again, you need to have actual Ether on the network
+        you created your custom token on in order to send transactions.
+    </p>
+    <p>
+        To send your first transaction just fill out the 'To Address' field, fill out the 'Amount To Send' and use the dropdown to change to your token. MyEtherWallet should automatically
+        fill out the 'Gas Limit' field, but you can up this value if you want to be safe. You will get any extra Ether back after the transaction. Now click 'Generate Transaction', wait
+        for MyEtherWallet to create the Transaction, then click 'Send Transaction'. You will get a confirmation and then you can actually submit the transaction in MetaMask, just like
+        when you created the token.
+    </p>
+    <p>
+        <img class="img-fluid" src="{% static 'tokenfactory/images/sending_filledout.png' %}" alt="Sending fields filled out">
+    </p>
+    <p>
+        After you submit the transaction in MetaMask MyEtherWallet will give you the option to view the transaction, or you can search for the transaction on the appropriate etherscan.io website
+        specified above. Once the transaction goes through you can search for it on the appropriate etherscan.io website to verify everything completed successfully. The easiest way to find your
+        transaction is to look in on your MetaMask under the Sent tab and click on the latest transaction. This will take you to the correct transaction page on etherscan.
+    </p>
+    <p>
+        Your friend now has the custom token you send them! They will not be able to see this token until they go through the process to add it to their MetaMask wallet just like you did above
+        using the Token Contract Address. Congratulation on creating your own custom token and sending it to your friends.
+    </p>
+  </main>
+</div>
+{% endblock %}

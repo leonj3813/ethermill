@@ -1,0 +1,4 @@
+# Don't copy these folders and files over for Docker use
+.venv-py
+*.sock
+.DS_Store

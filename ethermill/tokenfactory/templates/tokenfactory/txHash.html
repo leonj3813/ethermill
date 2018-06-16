@@ -1,0 +1,22 @@
+{% extends "tokenfactory/base.html" %}
+{% load static %}
+{% block metamask %}
+<div class="alert alert-danger metamask-alert" role="alert">Looking for MetaMask...</div>
+<div class="alert alert-success metamask-account" role="alert"></div>
+{% endblock %}
+{% block content %}
+<div class="cover-container small-width d-flex h-100 p-3 mx-auto flex-column align-items-center text-center">
+<main role="main" class="inner cover">
+    <div id="createdToken">
+        <p>Searching for your token...</p>
+    </div>
+</main>
+</div>
+{% endblock %}
+{% block txhashscript %}
+<script type="text/javascript">
+    server_tran_hash = "{{ tran_hash }}";
+</script>
+<script src="{% static 'tokenfactory/js/helpers.js' %}"></script>
+<script src="{% static 'tokenfactory/js/txhash.js' %}"></script>
+{% endblock %}
